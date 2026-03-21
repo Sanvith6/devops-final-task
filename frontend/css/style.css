@@ -1,0 +1,326 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f1f5f9;
+  color: #333;
+}
+
+/* ================= AUTH (LOGIN / REGISTER) ================= */
+.auth-body {
+  background: #f1f5f9;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.auth-card {
+  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.auth-card h2 {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.subtitle {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-card button:hover {
+  background: #1e40af;
+}
+
+/* LINKS */
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.switch {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #111827;
+  color: #fff;
+  position: fixed;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.sidebar a:hover {
+  background: #1f2937;
+}
+
+/* ================= MAIN ================= */
+.main {
+  margin-left: 240px;
+  padding: 25px;
+}
+
+/* ================= GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* ================= CARD ================= */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ================= TABLE ================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #111827;
+  color: white;
+  text-align: left;
+}
+
+td, th {
+  padding: 12px;
+}
+
+tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+/* ================= BUTTON ================= */
+button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+/* ================= INPUT GLOBAL ================= */
+input, select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* ================= PAGINATION ================= */
+#pagination button {
+  margin: 5px;
+  background: #e5e7eb;
+  color: black;
+}
+
+#pagination button:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  /* Sidebar becomes top navbar */
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 🔥 EXTRA SMALL DEVICES FIX */
+@media (max-width: 480px) {
+
+  .auth-container {
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .auth-card {
+    max-width: 100%;
+    padding: 25px 18px;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+
+  .auth-card h2 {
+    font-size: 20px;
+  }
+
+  input, button {
+    font-size: 14px;
+  }
+}
+/* ================= TOPBAR ================= */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.topbar button {
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+/* ================= SIDEBAR COLLAPSE ================= */
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar.collapsed a {
+  text-align: center;
+  font-size: 12px;
+}
+
+.sidebar.collapsed h2 {
+  display: none;
+}
+
+.main.collapsed {
+  margin-left: 70px;
+}
+
+/* ================= DARK MODE ================= */
+body.dark {
+  background: #111827;
+  color: #f9fafb;
+}
+
+body.dark .card,
+body.dark .box,
+body.dark table {
+  background: #1f2937;
+  color: white;
+}
+
+body.dark th {
+  background: #374151;
+}
+
+body.dark input {
+  background: #1f2937;
+  color: white;
+  border: 1px solid #555;
+}
+
+/* ================= ANIMATION ================= */
+.card, .box, table {
+  transition: all 0.3s ease;
+}
+.box:hover {
+  transform: translateY(-5px);
+}
+button:active {
+  transform: scale(0.95);
+}
+@media (max-width: 768px) {
+
+  .topbar {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar.active {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+  }
+}

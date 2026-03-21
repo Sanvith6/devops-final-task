@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="checkAuth()">
+
+<div class="sidebar">
+  <h2>Admin</h2>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="add-product.html">Add Product</a>
+  <a href="view-products.html">View Products</a>
+  <a href="#" onclick="logout()">Logout</a>
+</div>
+
+
+<div class="main">
+  <div class="topbar">
+    <button onclick="toggleSidebar()">☰</button>
+    <h2>Dashboard</h2>
+    <button onclick="toggleTheme()">🌙</button>
+  </div>
+
+  <h2>Analytics</h2>
+  <canvas id="myChart" height="100"></canvas>
+
+  <div class="grid">
+    <div class="box">Users: <span id="users">0</span></div>
+    <div class="box">Products: <span id="products">0</span></div>
+  </div>
+</div>
+
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/dashboard.js"></script>
+
+<script>
+async function loadStats() {
+  try {
+
+    const productsData = await apiRequest("/products");
+    document.getElementById("products").innerText = productsData.count;
+
+  
+    const userData = await apiRequest("/auth/me");
+    document.getElementById("users").innerText = 1; 
+
+ 
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Users', 'Products'],
+        datasets: [{
+          label: 'System Data',
+          data: [1, productsData.count],
+          backgroundColor: ['#4e73df', '#1cc88a'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+loadStats();
+</script>
+
+</body>
+</html>
