@@ -1,135 +1,76 @@
-# DevOps Internship – Day 9 Final Training Task
+# DevOps Internship - Day 9 Final Training Task
 
-This repository is created as part of the **Yumaris Agency DevOps Internship Program**, focusing on building a fully integrated, production-ready web application combining frontend, backend, and DevOps deployment.
+This repository contains the final full-stack internship project built for the Yumaris Agency DevOps Internship Program.
 
----
+## Project Overview
 
-## Task Objective
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js, Express, MongoDB
+- Local orchestration: Docker Compose
+- Cloud deployment:
+- Frontend on Firebase Hosting
+- Backend prepared for Render deployment from the `backend/` folder
+- Database on MongoDB Atlas
 
-Integrate frontend, backend, and deployment workflows into a single working project. Deploy or run the application locally using Docker and Docker Compose.
+## Live Frontend
 
----
+- Firebase Hosting URL: `https://yumaris-final-project.web.app`
 
-## Steps Performed
+## Repository Structure
 
-* **Frontend**
-  * Developed complete UI including Login, Dashboard, and other pages
-  * Connected frontend with backend APIs
-  * Implemented responsive design and client-side validation
+- `frontend/`: static frontend files
+- `backend/`: Express API for auth and product management
+- `docker-compose.yml`: local multi-service setup
+- `firebase.json`: Firebase Hosting configuration
+- `render.yaml`: Render blueprint for backend deployment
 
-* **Backend**
-  * Built APIs for authentication, CRUD operations, and validation
-  * Connected backend with **MongoDB** database
-  * Structured code modularly (routes, controllers, DB config)
-  * Implemented environment-based configuration using `.env`
+## Local Run
 
-* **DevOps / Deployment**
-  * Wrote Dockerfile for backend service
-  * Dockerized frontend (if applicable) for serving via Nginx or Node
-  * Created `docker-compose.yml` for multi-container setup (frontend + backend + MongoDB)
-  * Configured persistent storage for MongoDB using Docker volumes
-  * Built and ran containers using Docker Compose
-  * Tested complete application flow locally
+1. Install backend dependencies inside `backend/`
+2. Create `backend/.env` using `backend/.env.example`
+3. Run the backend with `npm start`
+4. Serve the frontend locally or deploy it to Firebase Hosting
 
----
+For Docker-based local development:
 
-## Docker Commands Used
+```bash
+docker-compose up --build
+```
 
-* `docker-compose up --build`
-* `docker ps`
-* `docker-compose down`
+## API Modules
 
----
+- Auth APIs under `/api/auth`
+- Product APIs under `/api/products`
 
-## Tools Used
+## Deployment Notes
 
-* Docker
-* Docker Compose
-* Node.js & Express.js (Backend)
-* HTML-CSS-JS (Frontend)
-* MongoDB
-* Postman / Browser (API testing)
+- Firebase Hosting serves the frontend
+- Render should deploy the backend from the `backend/` directory
+- MongoDB Atlas is used through the `MONGO_URI` environment variable
+- The backend CORS origin must match the Firebase frontend URL in `CLIENT_URL`
 
----
+## Important Environment Variables
 
-## Key Learnings
+Create `backend/.env` with:
 
-* Integrating frontend and backend services in a containerized environment
-* Managing multi-container applications using Docker Compose
-* Connecting frontend with backend APIs in a live environment
-* Handling environment variables for both frontend and backend
-* Implementing persistent storage for MongoDB using Docker volumes
-* Running and testing full-stack applications in Docker
-
----
-
-## API Endpoints
-
-### Authentication APIs
-
-* **POST /api/auth/register** → Register a new user  
-* **POST /api/auth/login** → Login existing user  
-* **GET /api/auth/me** → Get current user (Protected)  
-* **POST /api/auth/logout** → Logout user (Protected)  
-
-### Products APIs
-
-* **POST /api/products** → Create a new product (Protected)  
-* **GET /api/products** → Fetch all products (Public)  
-* **GET /api/products/:id** → Fetch product by ID (Public)  
-* **PUT /api/products/:id** → Update product (Protected)  
-* **DELETE /api/products/:id** → Delete product (Protected)  
-
-> **Note:** Protected routes require a valid JWT or cookie token.
-
----
-
-## Frontend Pages
-
-* **Login Page** – User authentication
-* **Dashboard** – Display user info and operations
-* **User Management** – CRUD interface for users
-* **Other Pages** – Complete UI as per internship requirement
-
----
-
-## Submission Details
-
-* All frontend, backend, and deployment work is merged into a single project
-* Project is running on Docker Compose for easy local deployment
-* Final working URL: https://frontend-latest-radp.onrender.com/
-  
-## Screenshots
-
-### Login Page
-
-<img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/72097079-fbab-443f-9f05-f5d2ca5c5009" />
-
-### Dashboard
-
-<img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/9b381c48-e288-43e4-a5b7-9beeef80629c" />
-
-### Add Product
-
-<img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/8c3d3da7-57c3-4585-9d48-47e3949509ff" />
-
-### View Products
-
-<img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/951a6a02-3f38-4382-a3c8-2da4507b484c" />
-
----
+```env
+PORT=5000
+NODE_ENV=production
+CLIENT_URL=https://yumaris-final-project.web.app
+MONGO_URI=your_mongodb_atlas_connection_string
+USER_JWT_TOKEN=your_secret_key
+```
 
 ## Internship Context
 
-This task is part of the **Yumaris Agency DevOps Internship**, where interns gain hands-on experience with:
+This project demonstrates:
 
-* Full-stack application development
-* Real-world DevOps tools and workflows
-* Containerization and multi-service orchestration
-* Industry-standard project integration and deployment
-
----
+- frontend and backend integration
+- API development with authentication and CRUD operations
+- MongoDB database integration
+- Docker-based local deployment
+- Firebase and Render deployment workflow
 
 ## Conclusion
 
-Successfully built, integrated, and deployed a full-stack web application combining frontend, backend, and Docker-based deployment using **MongoDB** as the database. Demonstrated real-world DevOps and full-stack development practices, producing a fully functional project ready for submission.
+This project is structured for both local development and free-tier cloud deployment using Firebase Hosting, Render, and MongoDB Atlas.

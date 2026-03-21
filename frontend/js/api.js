@@ -1,3 +1,4 @@
+// Set this to the external Render backend URL
 const BASE_URL = "https://backend-latest-an6g.onrender.com/api";
 
 async function apiRequest(endpoint, method = "GET", body = null) {
