@@ -97,7 +97,7 @@ Integrate frontend, backend, and deployment workflows into a single working proj
 
 * All frontend, backend, and deployment work is merged into a single project
 * Project is running on Docker Compose for easy local deployment
-* Final working URL:
+* Final working URL: https://frontend-latest-radp.onrender.com/
 
 ---
 
