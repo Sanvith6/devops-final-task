@@ -98,6 +98,24 @@ Integrate frontend, backend, and deployment workflows into a single working proj
 * All frontend, backend, and deployment work is merged into a single project
 * Project is running on Docker Compose for easy local deployment
 * Final working URL: https://frontend-latest-radp.onrender.com/
+  
+## Screenshots
+
+### Login Page
+
+<img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/72097079-fbab-443f-9f05-f5d2ca5c5009" />
+
+### Dashboard
+
+<img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/9b381c48-e288-43e4-a5b7-9beeef80629c" />
+
+### Add Product
+
+<img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/8c3d3da7-57c3-4585-9d48-47e3949509ff" />
+
+### View Products
+
+<img width="1366" height="768" alt="Image" src="https://github.com/user-attachments/assets/951a6a02-3f38-4382-a3c8-2da4507b484c" />
 
 ---
 
