@@ -19,8 +19,8 @@ A full-stack style admin dashboard built using HTML, CSS, and JavaScript.
 1. Download project
 2. Open index.html
 3. Login using:
-   - Email: admin@gmail.com
-   - Password: 1234
+   - Email: user@gmail.com
+   - Password: 123456
 
 ## 🌐 Deployment
 Can be deployed using Netlify / Vercel
