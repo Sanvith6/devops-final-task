@@ -8,6 +8,11 @@ This repository contains a full-stack product management application built as pa
 - Backend: `https://devops-final-task-1.onrender.com`
 - API base URL used by the frontend: `https://devops-final-task-1.onrender.com/api`
 
+## Demo Login
+
+- Username: `admin@gmail.com`
+- Password: `123456`
+
 ## What The App Does
 
 - User registration and login
