@@ -1,5 +1,5 @@
 // Set this to the external Render backend URL
-const BASE_URL = "https://backend-latest-an6g.onrender.com/api";
+const BASE_URL = "https://devops-final-task-1.onrender.com/api";
 
 async function apiRequest(endpoint, method = "GET", body = null) {
   const options = {
